@@ -1,0 +1,21 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+<style>
+  /* .larg_text_field {
+     width: 500px; height: 200px; border: 1px solid #999999; padding: 5px;
+  } */
+  #button {
+  	color: aqua;
+  }
+</style>
+<form method="post"> {% csrf_token %}
+<center>
+  <h1>{{ form.errors.non_field_errors }}</h1>
+	{{ form.as_p }}
+  <h3> الموضوع 1- أجدد القنيات  2- عن لغات البرمجة   3- اطلب المساعدة </h3><br />
+  <button type="submit" id='button'>احفظ</button><br /><br />
+</center>
+</form>
+
+{% endblock %}

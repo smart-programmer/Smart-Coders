@@ -1,0 +1,9 @@
+{% extends "main/header.html" %}
+
+
+{% block content %}
+	<center>
+		<h2>{{ article.body|safe|linebreaks }}</h2><br />
+		<p>{{ article.post_time|timesince }} ago | تم نشر المقالة منذ</p>
+	</center>
+{% endblock %}

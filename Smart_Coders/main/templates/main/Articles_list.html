@@ -1,0 +1,10 @@
+{% extends "main/header.html" %}
+
+
+{% block content %}
+			{% for i in object_list %}
+				<center>
+					<a href="{{i.slug}}/{{i.id}}"><h2> ({{ i.title }}) </h2><br /><h3> نشرت المقالة من قبل - {{ i.owner }}</h3><br /> <p>نشرت المقالة في {{ i.post_time}}</p><p> آخر تعديل للمقالة كان في {{ i.modify_time }} </a>
+				</center>
+			{% endfor %}
+	{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "main/header.html" %}
+
+
+{% block content %}
+<center>
+
+  <h1 id="latest">أحدث المقالات</h1><hr/><br /><br /><br />
+  </center>
+
+    {% for obj in object_list %}
+      <center>
+        <a href="/{{ obj.slug }}/{{ obj.id }}/"><h2 style="color: {{ colors }};">{{ obj.title }}</h2><h2> {{ obj.slug }}</h2></a><br />
+
+        <marquee behavior=scroll direction="left" scrollamount="50">
+			       <svg height="210" width="500">
+  				         <line x1="0" y1="100" x2="500" y2="100" style="stroke:rgb(255,0,0);stroke-width:2" />
+			       </svg>
+		    </marquee>
+
+
+     </center>
+     <!--<div class="new">
+     </div>-->
+     <hr/>
+     {% endfor %}
+{% endblock %}

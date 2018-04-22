@@ -1,0 +1,25 @@
+{% extends 'main/header.html' %}
+
+
+	{% block content %}
+	<center>
+		<h1> Smart Coders أهلا بك في | {{ user.username }}</h1><br />
+
+		<h3> إذهب إلى الرئيسية لقراءة أجدد المقالات أو إختر ما تريد القراءة عنه من القوائم</h3><br /><br /><br />
+
+		<h2> هذه هي مقالاتك المنشورة في الموقع  ({{ user.username }})  عزيزي المستخدم </h2><br />
+		{% for obj in object_list %}
+
+		<center>
+
+			<a href="{{obj.slug}}/{{obj.id}}"><h2> ({{ obj.title }}) </h2><br /> <p>نشرت المقالة في {{ obj.post_time}}</p><p> آخر تعديل للمقالة كان في {{ obj.modify_time }} </a><br /><br />
+		</center>
+
+		{% endfor %}
+
+
+		<h4> نشكرك على تفاعلك معنا ونتطلع للمزيد من مشاركاتك </h4>
+	</center>
+
+
+	{% endblock %}
